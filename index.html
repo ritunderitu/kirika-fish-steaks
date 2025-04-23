@@ -1,88 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kirika Fish Steaks</title>
-  <link rel="stylesheet" href="styles.css"> <!-- Assuming your CSS is in a separate file -->
   <style>
-    /* Apply background to the entire page */
+    /* Background image */
     body {
       background-image: url('./Screenshot_2025-04-21-22-27-20-60.jpg');
-      background-size: cover; /* Ensures the background covers the whole page */
-      background-position: center; /* Centers the image */
-      background-repeat: no-repeat; /* Prevents repeating the image */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
       margin: 0;
       padding: 0;
       font-family: Arial, sans-serif;
+      overflow-x: hidden;
     }
 
-    /* Optional: Adjust the content sections for better readability */
+    /* Header Section */
     header {
       text-align: center;
       padding: 50px;
       color: white;
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 8px;
+      margin: 20px;
     }
 
     h1 {
       font-size: 2.5rem;
+      margin: 0;
     }
 
-    /* Style the main content */
+    /* Main Content */
     main {
-      padding: 20px;
-      background: rgba(255, 255, 255, 0.7); /* Semi-transparent background for readability */
-      border-radius: 10px;
-      margin-top: 20px;
-    }
-
-    footer {
+      padding: 40px;
       text-align: center;
-      padding: 10px;
-      background-color: #333;
-      color: white;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 8px;
+      margin: 20px auto;
+      max-width: 1200px;
     }
 
+    /* Product Section */
     .products {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 20px;
+      margin-top: 20px;
     }
 
-    /* Add specific styling for products (optional) */
-    .products img {
-      max-width: 100%;
-      border-radius: 8px;
+    .product-item {
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 15px;
+      padding: 10px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+
+    /* Add a hover effect for product icons */
+    .product-item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .product-item img {
+      width: 100%;
+      border-radius: 10px;
+      transition: transform 0.5s ease;
+    }
+
+    /* Hover effect on image */
+    .product-item:hover img {
+      transform: scale(1.05);
+    }
+
+    .product-name {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    .product-price {
+      font-size: 1.1rem;
+      color: green;
+    }
+
+    /* Footer Section */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #333;
+      color: white;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
     }
   </style>
 </head>
 
 <body>
+
   <header>
     <h1>Welcome to Kirika Fish Steaks</h1>
   </header>
 
   <main>
     <section class="products">
+      <!-- Product 1 - Smoked Bacon -->
       <div class="product-item">
-        <img src="your-image-path.jpg" alt="Fish Steak 1">
-        <p>Product 1 - Ksh 1500/kg</p>
+        <img src="https://www.example.com/ai-generated/smoked_bacon_anime.jpg" alt="Smoked Bacon">
+        <p class="product-name">Smoked Bacon</p>
+        <p class="product-price">Ksh 3000/kg</p>
       </div>
+
+      <!-- Product 2 - Smoked Tuna -->
       <div class="product-item">
-        <img src="your-image-path.jpg" alt="Fish Steak 2">
-        <p>Product 2 - Ksh 1500/kg</p>
+        <img src="https://www.example.com/ai-generated/smoked_tuna_anime.jpg" alt="Smoked Tuna">
+        <p class="product-name">Smoked Tuna</p>
+        <p class="product-price">Ksh 3000/kg</p>
       </div>
+
+      <!-- Product 3 - Fresh Tuna -->
       <div class="product-item">
-        <img src="your-image-path.jpg" alt="Fish Steak 3">
-        <p>Product 3 - Ksh 1500/kg</p>
+        <img src="https://www.example.com/ai-generated/fresh_tuna_anime.jpg" alt="Fresh Tuna">
+        <p class="product-name">Fresh Tuna</p>
+        <p class="product-price">Ksh 1400/kg</p>
+      </div>
+
+      <!-- Product 4 - Queen Prawns -->
+      <div class="product-item">
+        <img src="https://www.example.com/ai-generated/queen_prawns_anime.jpg" alt="Queen Prawns">
+        <p class="product-name">Queen Prawns</p>
+        <p class="product-price">Ksh 2200/kg</p>
+      </div>
+
+      <!-- Product 5 - Red Snapper -->
+      <div class="product-item">
+        <img src="https://www.example.com/ai-generated/red_snapper_anime.jpg" alt="Red Snapper">
+        <p class="product-name">Red Snapper</p>
+        <p class="product-price">Ksh 3000/kg</p>
+      </div>
+
+      <!-- Product 6 - White Snapper -->
+      <div class="product-item">
+        <img src="https://www.example.com/ai-generated/white_snapper_anime.jpg" alt="White Snapper">
+        <p class="product-name">White Snapper</p>
+        <p class="product-price">Ksh 1300/kg</p>
       </div>
     </section>
   </main>
 
   <footer>
-    <p>Contact us at 0757707781</p>
+    <p>Contact us at 0743261057 | Order via WhatsApp</p>
   </footer>
+
 </body>
 
 </html>
