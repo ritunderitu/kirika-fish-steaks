@@ -1,233 +1,88 @@
-<!<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kirika Fish Steaks</title>
+  <link rel="stylesheet" href="styles.css"> <!-- Assuming your CSS is in a separate file -->
   <style>
+    /* Apply background to the entire page */
     body {
+      background-image: url('./Screenshot_2025-04-21-22-27-20-60.jpg');
+      background-size: cover; /* Ensures the background covers the whole page */
+      background-position: center; /* Centers the image */
+      background-repeat: no-repeat; /* Prevents repeating the image */
       margin: 0;
       padding: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: url('/images/anime_chef_bg.jpg') no-repeat center center/cover;
-      height: 100vh;
-      overflow-x: hidden;
-      color: #fff;
-      position: relative;
+      font-family: Arial, sans-serif;
     }
 
-    .overlay {
-      position: absolute;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.3);
-      z-index: 1;
-    }
-
-    .container {
-      position: relative;
-      z-index: 2;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      padding: 2rem 1rem 6rem;
-      gap: 1.5rem;
-    }
-
-    .product {
-      width: 100px;
+    /* Optional: Adjust the content sections for better readability */
+    header {
       text-align: center;
-      animation: float 4s ease-in-out infinite;
-      cursor: pointer;
-    }
-
-    .product img {
-      width: 100px;
-      height: 100px;
-      object-fit: cover;
-      border-radius: 50%;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-      transition: transform 0.3s;
-    }
-
-    .product p {
-      margin-top: 0.5rem;
-      font-size: 0.9rem;
-      background: rgba(0,0,0,0.4);
-      padding: 4px 6px;
-      border-radius: 5px;
-    }
-
-    .product img:hover {
-      transform: scale(1.1);
-    }
-
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-    }
-
-    .footer {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      background: #111;
-      color: #fff;
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      padding: 0.8rem;
-      z-index: 3;
-      font-size: 0.9rem;
-    }
-
-    .footer a, .footer span {
-      color: #00ffb7;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .cart-count {
-      background: red;
+      padding: 50px;
       color: white;
-      border-radius: 50%;
-      padding: 2px 6px;
-      font-size: 0.8rem;
-      margin-left: 5px;
     }
 
-    /* Modal */
-    .modal {
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%) scale(0);
-      background: #222;
-      color: #fff;
-      padding: 1rem 2rem;
-      border-radius: 10px;
-      z-index: 99;
-      transition: transform 0.3s ease;
-      box-shadow: 0 0 10px rgba(0,0,0,0.8);
-      text-align: center;
+    h1 {
+      font-size: 2.5rem;
     }
 
-    .modal.active {
-      transform: translate(-50%, -50%) scale(1);
-    }
-
-    .modal button {
-      margin-top: 1rem;
-      padding: 0.5rem 1rem;
-      background: #00ffb7;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-weight: bold;
-    }
-
-    .modal a {
-      color: #000;
-      text-decoration: none;
-    }
-  </style>
-</head>
-<body>
-  <div class="overlay"></div>
-
-  <div class="container">
-    <div class="product" onclick="addToCart('Bacon - Ksh 3000')">
-      <img src="/images/smoked_bacon.jpg" alt="Smoked Bacon">
-      <p>Bacon - Ksh 3000</p>
-    </div>
-    <div class="product" onclick="addToCart('Tuna - Ksh 3000')">
-      <img src="/images/smoked_tuna.jpg" alt="Smoked Tuna">
-      <p>Tuna - Ksh 3000</p>
-    </div>
-    <div class="product" onclick="addToCart('Octopus - Ksh 1300')">
-      <img src="/images/octopus.jpg" alt="Octopus">
-      <p>Octopus - Ksh 1300</p>
-    </div>
-    <div class="product" onclick="addToCart('Queen Prawns - Ksh 2200')">
-      <img src="/images/prawns.jpg" alt="Queen Prawns">
-      <p>Prawns - Ksh 2200</p>
-    </div>
-    <!-- Add more products here -->
-  </div>
-
-  <div class="footer">
-    <a href="https://wa.me/254757707781" target="_blank">WhatsApp Order</a>
-    <span>Kirika Fish Steaks</span>
-    <a href="javascript:void(0)">Cart <span class="cart-count" id="cartCount">0</span></a>
-  </div>
-
-  <div class="modal" id="modal">
-    <p>Item added to cart!</p>
-    <button onclick="closeModal()">Continue</button>
-    <br><br>
-    <button><a href="https://wa.me/254757707781" target="_blank">Order Now</a></button>
-  </div>
-
-  <script>
-    let cart = [];
-
-    function addToCart(item) {
-      cart.push(item);
-      document.getElementById('cartCount').textContent = cart.length;
-      document.getElementById('modal').classList.add('active');
-    }
-
-    function closeModal() {
-      document.getElementById('modal').classList.remove('active');
-    }
-  </script>
-</body>
-</html>DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kirika Fish Steaks</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      background-image: url('https://i.imgur.com/8yRtZSh.jpg'); /* sample motorbike fish image */
-      background-size: cover;
-      color: white;
-      text-align: center;
-    }
-    .menu {
-      background: rgba(0,0,0,0.6);
-      margin: 20px;
+    /* Style the main content */
+    main {
       padding: 20px;
-      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.7); /* Semi-transparent background for readability */
+      border-radius: 10px;
+      margin-top: 20px;
     }
-    .item {
-      margin: 10px;
+
+    footer {
+      text-align: center;
       padding: 10px;
-      border-bottom: 1px solid white;
+      background-color: #333;
+      color: white;
     }
-    .footer {
-      margin-top: 30px;
-      font-size: 18px;
-      background: rgba(0,0,0,0.7);
-      padding: 15px;
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    /* Add specific styling for products (optional) */
+    .products img {
+      max-width: 100%;
       border-radius: 8px;
     }
   </style>
 </head>
-<body>
-  <h1>Kirika Fish Steaks</h1>
-  <div class="menu">
-    <div class="item">Tilapia Steaks - Ksh 1500/kg</div>
-    <div class="item">Catfish Fillet - Ksh 1500/kg</div>
-    <div class="item">Salmon Chunks - Ksh 1500/kg</div>
-    <div class="item">Whole Fish Cuts - Ksh 1500/kg</div>
-  </div>
 
-  <div class="footer">
-    Call / WhatsApp: <a href="https://wa.me/254757707781" style="color:lightgreen">0757707781</a><br>
-    Location: Langata
-  </div>
+<body>
+  <header>
+    <h1>Welcome to Kirika Fish Steaks</h1>
+  </header>
+
+  <main>
+    <section class="products">
+      <div class="product-item">
+        <img src="your-image-path.jpg" alt="Fish Steak 1">
+        <p>Product 1 - Ksh 1500/kg</p>
+      </div>
+      <div class="product-item">
+        <img src="your-image-path.jpg" alt="Fish Steak 2">
+        <p>Product 2 - Ksh 1500/kg</p>
+      </div>
+      <div class="product-item">
+        <img src="your-image-path.jpg" alt="Fish Steak 3">
+        <p>Product 3 - Ksh 1500/kg</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Contact us at 0757707781</p>
+  </footer>
 </body>
+
 </html>
